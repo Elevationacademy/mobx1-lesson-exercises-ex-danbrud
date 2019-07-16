@@ -14,6 +14,7 @@ class Item extends Component {
   };
   deleteItem = () => {
     //your code here
+    this.props.store.deleteItem(this.props.item)
   };
   render() {
     let item = this.props.item;
@@ -22,6 +23,8 @@ class Item extends Component {
         <input type="checkbox" value={item.name} onClick={this.checkItem}/>
         {item.name} - {item.location}
         <button class="editItem" name={item.name} onClick={this.editItem}>edit</button>
+        <button class="deleteItem" name={item.name} onClick={this.deleteItem}>delete</button>
+
       </div>
     );
   }
