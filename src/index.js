@@ -4,15 +4,41 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-import { Item } from '../src/stores/Item'
 import { ShoppingList } from '../src/stores/ShoppingList'
 
 
-let potatoes = new Item("Potatoes")
+
+
+ReactDOM.render(<App />, document.getElementById('root'));
+registerServiceWorker();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let groceryList = new ShoppingList()
-groceryList.list.push(potatoes)
-groceryList.list.push(new Item("corn"))
-groceryList.list.push(new Item("sombrero"))
 
 // Use the prop "store" for your store
 ReactDOM.render(<App store={groceryList}/>, document.getElementById('root'));
