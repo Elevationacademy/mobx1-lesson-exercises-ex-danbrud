@@ -22,6 +22,40 @@ import { Item } from './Item'
 
 
 
+// export class ShoppingList {
+
+//   @observable list = ['Apple', 'Tomato', 'Avocado']
+//   @observable length;
+
+//   @action addItem(item) {
+//     this.list.push(item)
+//   }
+
+//   @action updateItem = (itemName, newName) => {
+//     const i = this.list.indexOf(itemName)
+//     this.list.splice(i, 1, newName)
+//   }
+
+
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

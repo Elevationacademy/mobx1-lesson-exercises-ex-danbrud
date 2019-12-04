@@ -1,33 +1,59 @@
 import React, { Component } from 'react';
-import { observer } from 'mobx-react';
+import { observer, inject } from 'mobx-react';
+
+
 
 @observer
 class Item extends Component {
-  checkItem = e => {
-    this.props.store.checkItem(e.target.value);
-  };
 
-  editItem = (e) => {
-    let newLocation = prompt("Edit item ")
-    this.props.store.editItem(e.target.name, newLocation)
-    //your code here
-  };
-  deleteItem = () => {
-    //your code here
-    this.props.store.deleteItem(this.props.item)
-  };
+  updateItem = () => {
+    let newName = prompt('Enter a new name')
+    //Use update Item from store
+    
+  }
+
   render() {
-    let item = this.props.item;
     return (
-      <div className={item.completed ? 'crossed' : null}>
-        <input type="checkbox" value={item.name} onClick={this.checkItem}/>
-        {item.name} - {item.location}
-        <button class="editItem" name={item.name} onClick={this.editItem}>edit</button>
-        <button class="deleteItem" name={item.name} onClick={this.deleteItem}>delete</button>
-
+      <div onClick={this.updateItem}>
+        {this.props.itemName}
       </div>
     );
   }
 }
 
 export default Item;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// @inject('groceryList')
+// @observer
+// class Item extends Component {
+
+//   updateItem = () => {
+//     let newName = prompt('Enter a new name')
+//     this.props.groceryList.updateItem(this.props.itemName, newName)
+//   }
+
+//   render() {
+//     return (
+//       <div onClick={this.updateItem}>
+//         {this.props.itemName}
+//       </div>
+//     );
+//   }
+// }
+
+// export default Item;
