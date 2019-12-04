@@ -8,7 +8,8 @@ import Item from './components/Item';
 
 class App extends Component {
 
-  addItem=()=>{
+  addItem = () => {
+    const item = prompt('What do you need?')
     //Add item to list
   }
 
