@@ -5,8 +5,7 @@ import Item from './components/Item';
 
 
 
-@inject('groceryList')
-@observer
+
 class App extends Component {
 
   addItem=()=>{
