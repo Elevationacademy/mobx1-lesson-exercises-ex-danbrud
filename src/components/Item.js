@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 
-
-
+@inject('GroceryList')
 @observer
 class Item extends Component {
 
   updateItem = () => {
     let newName = prompt('Enter a new name')
     //Use update Item from store
-    
+    this.props.GroceryList.updateItem(this.props.itemName, newName)
   }
 
   render() {

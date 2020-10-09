@@ -1,5 +1,23 @@
-import { observable, action } from 'mobx'
-import { Item } from './Item'
+import { observable, action } from "mobx";
+
+
+export class ShoppingList {
+  @observable list = ['banana', 'orange']
+
+  @action addItem(itemName) {
+    this.list.push(itemName)
+  }
+
+  @action updateItem(itemName, newName) {
+    const i = this.list.indexOf(itemName)
+    this.list[i] = newName
+  }
+}
+
+
+
+
+
 
 
 

@@ -3,14 +3,20 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-
-import { ShoppingList } from '../src/stores/ShoppingList'
 import { Provider } from 'mobx-react';
+import { ShoppingList } from './stores/ShoppingList'
+
 
 //Create instance of store
+const GroceryList = new ShoppingList()
 
+const stores = { GroceryList }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <Provider {...stores}>
+    <App />
+  </Provider>
+  , document.getElementById('root'));
 registerServiceWorker();
 
 

@@ -2,23 +2,31 @@ import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react'
 import './App.css';
 import Item from './components/Item';
+// import { observer } from 'mobx';
 
-
-
-
+@inject('GroceryList')
+@observer
 class App extends Component {
 
   addItem = () => {
     const item = prompt('What do you need?')
     //Add item to list
+    this.props.GroceryList.addItem(item)
   }
 
   render() {
 
     return (
       <div className="App">
-        <button>Add item</button>
+        <button onClick={this.addItem}>Add item</button>
         {/* Render list from props */}
+        {
+          this.props.GroceryList.list.map(i => (
+            <Item
+              itemName={i}
+            />
+          ))
+        }
       </div>
     );
   }
